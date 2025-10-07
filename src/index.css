@@ -1,39 +1,220 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-}
-
-form, table {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-form div {
-  margin-bottom: 10px;
-}
-
-label {
-  display: block;
-  margin-bottom: 4px;
-}
-
-input[type="text"], textarea {
-  width: 100%;
-  padding: 6px;
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-button {
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+.navbar {
+  background: var(--white);
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+
+.navbar button {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  color: var(--color-texto);
+  transition: background 0.2s;
+}
+
+.navbar button:hover {
+  background: var(--color-primario);
+  color: var(--white);
+}
+
+main {
+  padding: 20px;
+}
+
+.home {
+  text-align: center;
+  padding: 40px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.home-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home-links button {
+  background: var(--color-primario);
+  color: var(--color-texto);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.home-links button:hover {
+  opacity: 0.9;
+}
+
+.module {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.module h2 {
+  margin-bottom: 15px;
+  color: var(--color-primario);
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="color"],
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+button[type="submit"] {
+  background: var(--color-primario);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.color-preview {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
   margin-right: 6px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  border-radius: 3px;
 }
 
 .error {
-  color: red;
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+/* Agrupa el input de color, su preview grande y el código */
+.color-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Vista previa grande del color */
+.color-preview-large {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+/* Código hexadecimal junto al preview */
+.color-code {
+  font-family: monospace;
+  color: var(--color-texto);
+}
+
+/* --- Tags input --- */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 42px;
+  cursor: text;
+}
+
+.tags-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 120px;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background: #e0e0e0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tag .remove {
+  margin-left: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+}
+
+/* Ajuste general de imágenes (opcional) */
+input[type="file"] {
+  font-size: 14px;
+}
+
+.descripcion-producto{
+  height: 100px;
 }
